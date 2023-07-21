@@ -11,6 +11,7 @@ import { terser } from 'rollup-plugin-terser'
 import cleaner from 'rollup-plugin-cleaner'
 import path from 'path'
 import { fileURLToPath } from 'url'
+
 const entries = ['src/index.ts']
 
 const plugins = [
@@ -18,7 +19,9 @@ const plugins = [
     babel({
         babelrc: false,
         babelHelpers: 'bundled',
-        presets: [['env', { modules: false }]],
+        presets: ['@babel/preset-env'],
+        exclude: 'node_modules/**',
+        compact: false,
     }),
     resolve({
         preferBuiltins: true,
@@ -32,11 +35,11 @@ const plugins = [
         ],
     }),
     json(),
-    typescript(),
     commonjs(),
     esbuild(),
     terser(),
     cleaner({ targets: ['./dist/'], silent: false }),
+    typescript(),
 ]
 
 export default [
@@ -44,17 +47,9 @@ export default [
         input,
         output: [
             {
-                file: input.replace('src/', 'dist/').replace('.ts', '.umd.js'),
-                format: 'umd',
-                name: 'template.min.js',
-            },
-            {
-                file: input.replace('src/', 'dist/').replace('.ts', '.esm.js'),
-                format: 'esm',
-            },
-            {
-                file: input.replace('src/', 'dist/').replace('.ts', '.common.js'),
+                file: input.replace('src/', 'dist/').replace('.ts', '.js'),
                 format: 'cjs',
+                banner: '#!/usr/bin/env node',
             },
         ],
         external: [],
