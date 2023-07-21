@@ -1,20 +1,6 @@
-# rollup-ts-basic-template
+# rollup-ts-basic-template-cli
 
-:lollipop: 用于开发前端库的基础模板
-
-## 安装
-
-`git clone https://github.com/supuwoerc/rollup-ts-basic-template.git`
-
-## 启动
-
-### 安装依赖
-
-`pnpm install`
-
-### 启动项目
-
-`pnpm run dev`
+:lollipop: 用于开发前端库脚手架
 
 ## 维护者
 
