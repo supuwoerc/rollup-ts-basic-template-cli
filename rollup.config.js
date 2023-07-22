@@ -5,7 +5,7 @@ import json from '@rollup/plugin-json'
 import alias from '@rollup/plugin-alias'
 import esbuild from 'rollup-plugin-esbuild'
 import typescript from 'rollup-plugin-typescript2'
-import babel from '@rollup/plugin-babel'
+// import babel from '@rollup/plugin-babel'
 import eslint from '@rollup/plugin-eslint'
 import { terser } from 'rollup-plugin-terser'
 import cleaner from 'rollup-plugin-cleaner'
@@ -15,30 +15,30 @@ import { fileURLToPath } from 'url'
 const entries = ['src/index.ts']
 
 const plugins = [
-    eslint(),
-    babel({
-        babelrc: false,
-        babelHelpers: 'bundled',
-        presets: ['@babel/preset-env'],
-        exclude: 'node_modules/**',
-        compact: false,
-    }),
-    resolve({
-        preferBuiltins: true,
-    }),
-    alias({
-        entries: [
-            {
-                find: '@',
-                replacement: path.resolve(path.dirname(fileURLToPath(import.meta.url)), 'src'),
-            },
-        ],
-    }),
-    json(),
-    commonjs(),
-    esbuild(),
-    terser(),
-    cleaner({ targets: ['./dist/'], silent: false }),
+    // eslint(),
+    // babel({
+    //     babelrc: false,
+    //     babelHelpers: 'bundled',
+    //     presets: ['@babel/preset-env'],
+    //     exclude: 'node_modules/**',
+    //     compact: false,
+    // }),
+    // resolve({
+    //     preferBuiltins: true,
+    // }),
+    // alias({
+    //     entries: [
+    //         {
+    //             find: '@',
+    //             replacement: path.resolve(path.dirname(fileURLToPath(import.meta.url)), 'src'),
+    //         },
+    //     ],
+    // }),
+    // json(),
+    // commonjs(),
+    // esbuild(),
+    // terser(),
+    // cleaner({ targets: ['./dist/'], silent: false }),
     typescript(),
 ]
 
