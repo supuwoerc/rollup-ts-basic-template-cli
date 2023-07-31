@@ -1,5 +1,5 @@
 {
-    "name": "rollup-ts-basic-template-cli",
+    "name": "@supuwoerc/parrot-cli",
     "version": "1.0.0",
     "description": "create project cli tools",
     "main": "./dist/index.js",
