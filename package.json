@@ -1,6 +1,6 @@
 {
     "name": "@supuwoerc/parrot-cli",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "create project cli tools",
     "main": "./dist/index.js",
     "bin": {
